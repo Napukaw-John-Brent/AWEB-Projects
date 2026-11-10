@@ -1,0 +1,160 @@
+/* Palette pulled from the background: night navy, lantern amber, pillar red */
+:host {
+  --night: rgba(8, 14, 38, 0.74);
+  --lantern: #f6b95b;
+  --lantern-soft: #ffe2b0;
+  --ember: #d6402f;
+  --ember-dark: #a82c20;
+  --ink: #eef1fb;
+  --ink-muted: #b4bdd8;
+  --line: rgba(246, 185, 91, 0.35);
+}
+
+.resume {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 32px;
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  background: var(--night);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
+  backdrop-filter: blur(10px) saturate(1.1);
+}
+
+.intro {
+  text-align: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 22px;
+  margin-bottom: 28px;
+}
+
+.intro h1 {
+  margin-bottom: 4px;
+  color: var(--lantern-soft);
+  font-size: 2.2rem;
+  text-shadow: 0 0 22px rgba(246, 185, 91, 0.45);
+}
+
+.intro p {
+  color: var(--ink-muted);
+  overflow-wrap: anywhere;
+}
+
+.intro a {
+  color: var(--lantern);
+}
+
+.intro a:hover {
+  color: var(--lantern-soft);
+}
+
+section {
+  margin: 26px 0;
+}
+
+section h2 {
+  color: var(--lantern);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 6px;
+  text-transform: uppercase;
+  font-size: 1.15rem;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 24px;
+  padding-left: 22px;
+}
+
+li::marker {
+  color: var(--lantern);
+}
+
+/* Technical Proficiencies */
+.proficiency-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.proficiency {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(20, 30, 70, 0.55);
+}
+
+.proficiency h3 {
+  margin: 0 0 10px;
+  color: var(--lantern-soft);
+  font-size: 1rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li {
+  padding: 3px 12px;
+  border: 1px solid rgba(246, 185, 91, 0.45);
+  border-radius: 20px;
+  background: rgba(246, 185, 91, 0.14);
+  color: var(--lantern-soft);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 18px;
+  background: var(--ember);
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 0 0 1px rgba(255, 226, 176, 0.25), 0 4px 14px rgba(214, 64, 47, 0.4);
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+button:hover {
+  background: var(--ember-dark);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:focus-visible,
+.intro a:focus-visible {
+  outline: 2px solid var(--lantern);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .resume {
+    margin: 12px;
+    padding: 18px;
+  }
+
+  ul {
+    grid-template-columns: 1fr;
+  }
+
+  .proficiency-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intro h1 {
+    font-size: 1.7rem;
+  }
+}
